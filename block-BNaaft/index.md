@@ -12,7 +12,7 @@ Create an event management website using express & mongoDB where users visiting 
 7. Each events can have fields like:-
 
 - title
-- summary(brief explanation of events)
+- summary(brief explanation of events )
 - host(could be a person or an organization)
 - start_date
 - end_date
