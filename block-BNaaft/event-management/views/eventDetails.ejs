@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://kit.fontawesome.com/d95544a3bc.js" crossorigin="anonymous"></script>
+  <title>Event Management</title>
+</head>
+<body>
+  <header class="container flex space-between">
+      <a class="brand-name" href="">Event <span>Management</span></a>
+      <ul class="flex navbar">
+          <li><a href=""><i class="far fa-envelope"></i></a></li>
+          <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+      </ul>
+  </header>
+  <main class="details-main">
+    <section class="details-sec">
+        <div class="details relative">
+            <div class="image-container">
+                <img src="<%=event.cover_image_url%>" class="full-width">
+            </div>
+            <div class="details-content">
+                    <h2><%=event.title%></h2>
+                     <address class="details-address"><i class="fas fa-map-marker-alt"></i><%=event.location%></address>
+               
+                    <i class="fas fa-hashtag"></i>
+                    <%event.category.forEach((ele,i,arr) =>{%>
+                        <span class="details-tag"><%=ele%></span>
+                        <%if(i!==arr.length-1){%>
+                          <span>,</span>
+                        <%}%>
+                      <%})%>
+                
+                <h3 class="details-host"><span>Hosted By: </span><%=event.host%></h3>
+                <p class="details-time"><i class="far fa-clock"></i><time><%=startDate%><time> - <time><%=endDate%></time></p>
+                <p class="summary"><%=event.summary%></p>
+                <a href="/event/<%=event._id%>/edit" class="btn">Edit</a>
+                <a href="/event/<%=event._id%>/delete" class="btn">Delete</a>
+                <a href="/event" class="btn back-btn"><span><i class="fas fa-long-arrow-alt-left"></i></span> Back to events</a>
+
+                <div class="like-dislikes">
+                  <a href="/event/<%=event._id%>/like" class="icon-c"><i class="fas fa-thumbs-up"></i></a>
+                  <span><%=event.like%></span>
+                  <a href="/event/<%=event._id%>/dislike" class="icon-c"><i class="fas fa-thumbs-down"></i></a>
+                  <span><%=event.dislike%></span>
+                </div>
+ <!-- remarks  -->
+                <div class="remarks">
+                    <h3>Remarks</h3>
+                    <form action="/remark/<%=event._id%>" method="POST" class="add-comment">
+                        <input type="text" placeholder="Name" class="author" name="author">
+                        <textarea name="content" rows="3" placeholder="Add your remarks here..."></textarea>
+                        <input class="btn-c " type="submit" value="Add">
+                    </form>
+                    <%event.remark.forEach(ele=>{%>
+                      <p class="remark-title">Posted by: <span><%=ele.author%></span></p>
+                      <p class="para"><%=ele.content%></p>
+                      <a href="/remark/<%=ele._id%>/like" class="icon-c"><i class="fas fa-thumbs-up"></i></a>
+                      <span><%=ele.like%></span>
+                      <a href="/remark/<%=ele._id%>/dislike" class="icon-c"><i class="fas fa-thumbs-down"></i></a>
+                      <span><%=ele.dislike%></span>
+                      <a href="/remark/<%=ele._id%>/edit" class="btn-c btn">Edit</a>
+                      <a href="/remark/<%=ele._id%>/delete" class="btn-c btn">Delete</a>
+                      <hr>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+</body>
+</html>
