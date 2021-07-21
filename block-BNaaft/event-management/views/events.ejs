@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://kit.fontawesome.com/d95544a3bc.js" crossorigin="anonymous"></script>
+  <title>Event Management</title>
+</head>
+<body>
+  <header class="container flex space-between">
+      <a class="brand-name" href="">Event <span>Management</span></a>
+      <ul class="flex navbar">
+          <li><a href=""><i class="far fa-envelope"></i></a></li>
+          <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+      </ul>
+  </header>
+  <main>
+      <section class="container events-sec">
+        <aside>
+          <h3 class="sort">Sort</h3>
+          <div class="bycategory">
+            <h4 class="cat-heading">By category</h4>
+            <div class="flex-wrap category-root">
+              <%uniqCategories.forEach(ele=>{%>
+                <a href="/event/<%=ele%>/sortbycategory" class="tag"><%=ele%></a>
+              <%})%>
+            </div>
+          </div>
+          <div class="bylocation">
+            <h4 class="cat-heading">By location</h4>
+            <div class="flex-wrap">
+              <%uniqLocations.forEach(ele=>{%>
+                <a href="/event/<%=ele%>/sortbylocation" class="tag"><%=ele%></a>
+              <%})%>
+            </div>
+          </div>
+          <h4 class="cat-heading">By date</h4>
+            <div class="bydate">
+              <a href="/event/sortby/date" class="tag">Click to sort by date</a>
+          </div>
+          <a href="/event" class="backto-btn"><span><i class="fas fa-long-arrow-alt-left"></i></span> All Events</a>
+          <a href="/event/new" class="add-btn">Add new event</a>
+        </aside>
+        <div class="list">
+          <%events.forEach(ele=>{%>
+            <article class="each-event flex ">
+              <div class="image-container flex-45">
+                <img class="full-width" src="<%=ele.cover_image_url%>" alt="">
+              </div>
+              <div class="event-content ">
+                <a href="/event/<%=ele.id%>" class="event-title"><%=ele.title%></a>
+                <a href="#" class="event-location"><span class="icon"><i class="fas fa-map-marker-alt"></i></span><%=ele.location%></a>
+                <div class="event-categ">
+                  <span class="icon"><i class="fas fa-hashtag"></i></span>
+                  <%ele.category.forEach((c,i,arr) =>{%>
+                    <a href="" class="each-catg"><%=c%></a>
+                    <%if(i!==arr.length-1){%>
+                      <span>,</span>
+                    <%}%>
+                  <%})%>
+                </div>
+              </div>
+            </article>
+          <%})%>
+        </div>
+      </section>
+  </main>
+  <script src="/javascripts/script.js"></script>
+</body>
+</html>

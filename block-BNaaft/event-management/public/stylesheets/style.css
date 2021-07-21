@@ -1,0 +1,346 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* custom css  */
+*{
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  background: #222531;
+  color: white;
+}
+.container {
+  width: 1300px;
+  margin: 0 auto;
+}
+.form-container {
+  width: 600px;
+  margin: 0 auto;
+}
+.relative {
+  position: relative;
+}
+a {
+  color: #00B7FF;
+}
+/* flex  */
+.flex {
+  display: flex;
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+/* general  */
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+.full-width {
+  max-width: 100%;
+  height: 100%;
+}
+.btn {
+  color: #CE1E36;
+  background: #222531;
+  padding: .3rem .6rem;
+  border-radius: 3px;
+  margin-top: .6rem;
+  margin-right: .3rem;
+}
+/* header  */
+header {
+  padding: 1rem 0;
+}
+.brand-name {
+  color: white;
+  font-size: 2.2rem;
+}
+.brand-name span {
+  color: #F23F36;
+}
+.navbar {
+  background: #222531;
+}
+.navbar li{
+  margin-right: 2rem;
+}
+.navbar li a {
+  display: inline-block;
+  color: #CE1E36;
+}
+footer {
+  padding: 2rem 0;
+}
+footer p {
+  text-align: center;
+}
+/* event  */
+.form-sec {
+  padding: 1rem;
+  box-shadow: 1px 1px 10px 1px #CE1E36;
+  margin-top: 2rem;
+}
+h2 {
+  font-size: 1.4rem;
+}
+.form-sec h2 {
+  margin-bottom: 1rem;
+}
+.label {
+  color: #CE1E36;
+}
+.add-btn {
+  position: absolute;
+  bottom: 0rem;
+  background: #CE1E36;
+  padding: .4rem 0;
+  right: .0rem;
+  left: .0rem;
+  text-align: center;
+  border-radius: 1px;
+  /* box-shadow: 1px 1px 5px 1px #CE1E36; */
+} 
+.backto-btn {
+  margin-top: 3rem;
+  display: inline-block;
+  color: #CE1E36;
+  font-size: 1.1rem;
+}
+/* event list  */
+aside {
+  box-shadow: 1px 1px 10px 1px #CE1E36;
+  width: 300px;
+  padding: 1rem;
+  height: 83vh;
+  margin-top: 2rem;
+  position: fixed;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+.bylocation {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.bydate .btn {
+  margin-top: 2rem;
+}
+.cat-heading {
+  margin-top: 1rem;
+  color: #CE1E36;
+}
+.tag {
+  box-shadow: 1px 1px 10px 1px #CE1E36;
+  padding: .25rem .7rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+} 
+.list {
+  padding-top: 1.9rem;
+  margin-left: 400px;
+  display: grid;
+  grid-template-columns: repeat(3,280px);
+  grid-gap: 32px;
+}
+.each-event {
+  box-shadow: 1px 1px 5px 1px #CE1E36;
+  height: 200px;
+}
+.each-event .image-container {
+  height: 196px;
+  width: 150px;
+}
+.event-content {
+  padding: 1rem;
+}
+.event-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #CE1E36;
+}
+.event-location {
+  display: block;
+  margin-bottom: 1rem;
+}
+.event-categ {
+  margin-bottom: 3rem;
+}
+.each-catg {
+  margin: .2rem 0;
+}
+.event-content .icon {
+  margin-right: .2rem;
+  color: #CE1E36;
+}
+
+.details-main {
+  padding-bottom: 20rem;
+}
+
+.details-sec {
+  width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-shadow: 1px 1px 10px 1px #CE1E36;
+  margin-top: 2rem;
+  border-radius: 5px;
+  margin-bottom: 10rem;
+} 
+
+.details-sec .image-container {
+  height: 500px;
+}
+
+.details-content {
+  width: 650px;
+  position: absolute;
+  top: 350px;
+  background: #CE1E36;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 5px;
+  color: black;
+}
+
+.details-content h2 {
+  margin-bottom: .3rem;
+}
+
+.details-address {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.details-host {
+  font-size: 1rem;
+  margin: .4rem 0;
+}
+.details i {
+  margin-right: .2rem;
+}
+.details-time {
+  margin: .3rem 0;
+}
+.details-content .summary {
+  font-weight: 300;
+}
+.like-dislikes {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.like-dislikes span{
+  margin-right: .9rem;
+}
+.back-btn {
+  margin-left: 21rem;
+}
+/* remarks  */
+.remarks h3 {
+  font-size: 1.1rem;
+  color: rgb(90, 90, 236);
+  margin-bottom: .4rem;
+}
+.remarks {
+  border-top: 1px solid black;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+.para {
+  font-size: .9rem;
+  font-weight: 300;
+  color: #424242;
+}
+.icon-c {
+  margin-top: .5rem;
+  display: inline-block;
+  color: #909090;
+}
+.comments span {
+  margin-right: .5rem;
+}
+.btn-c {
+  font-size: .7rem;
+  font-weight: 300;
+  padding: 0.3rem 0.3rem;
+  background-color: rgb(151, 151, 233);
+  color: black;
+  border: 0;
+  border-radius: 2px;
+}
+
+.add-comment textarea, .author{
+  width: 90%;
+}
+.add-comment input {
+  display: block;
+  margin-bottom: .5rem;
+}
+.remark-title {
+  margin: .8rem 0 .3rem 0;
+  font-size: .9rem;
+}
+
+.remark-title span {
+  font-weight: 300;
+}
+
+/* edir remark  */
+.editRemark-container {
+  margin-bottom: 15.3rem;
+}
+
+
